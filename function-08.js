@@ -29,6 +29,7 @@ const getInfoPenjualan = (dataPenjualan) => {
     let persentaseKeuntungan = 0;
     let produkBukuTerlaris = '';
     let penulisTerlaris = '';
+    let terjualSemua = 0;
 
     // totalKeuntungan & totalModal
     // Loop through all item in value
@@ -43,15 +44,18 @@ const getInfoPenjualan = (dataPenjualan) => {
 
         // Math formula
         let totalStok = totalTerjual + sisaStok;
-        let keuntungan = hargaJual - hargaBeli;
+        // let keuntungan = hargaJual - hargaBeli;
 
         // Math calculation
-        totalKeuntungan += ((totalTerjual - sisaStok) * keuntungan);
+        totalKeuntungan += ((totalTerjual * hargaJual) - (totalStok * hargaBeli));
         totalModal += (totalStok * hargaBeli);
+
+        // Profit perentage calculation
+        terjualSemua += totalStok * hargaJual;
     };
 
     // Calculate profit percentage
-    persentaseKeuntungan = Math.floor(totalKeuntungan / totalModal * 100);
+    persentaseKeuntungan = Math.floor(terjualSemua / totalModal * 100) - 100;
 
 
     // Search highest product sold
