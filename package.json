@@ -4,7 +4,7 @@
   "description": "Binar Academy Chapter 2",
   "main": "function-01.js",
   "scripts": {
-    "test": "node function-01.js && node function-02.js && node function-03.js && node function-04.js && node function-05.js && node function-06.js && node function-07.js && node function-08.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",

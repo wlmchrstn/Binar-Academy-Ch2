@@ -1,6 +1,6 @@
 const getSplitName = (givenName) => {
     // Validate null parameter
-    if (!givenName) return console.log('Error: Name is required');
+    if (!givenName) return 'Error: Name is required';
 
     // Conver data type to string
     givenName = givenName.toString();
@@ -9,7 +9,7 @@ const getSplitName = (givenName) => {
     let arrName = givenName.split(' ');
 
     // Validate name only for 3 characters
-    if (arrName[3]) return console.log('Error: This function is only for 3 characters name');
+    if (arrName[3]) return 'Error: This function is only for 3 characters name';
 
     // Map data to object
     let objName = {
@@ -19,13 +19,7 @@ const getSplitName = (givenName) => {
     };
 
     // Display output
-    return console.log(objName);
+    return objName;
 };
 
-// Testing
-console.log('\n\n// Function 05');
-getSplitName('Aldi Daniela Pranata');
-getSplitName('Dwi Kuncoro');
-getSplitName('Aurora');
-getSplitName('Aurora Aurelliya Sukma Darma');
-getSplitName(0);
+module.exports = getSplitName;

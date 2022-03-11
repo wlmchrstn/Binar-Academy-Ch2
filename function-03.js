@@ -1,9 +1,9 @@
 const checkEmail = (email) => {
     // Validate null parameter
-    if (!email) return console.log('Error: Email is required');
+    if (!email) return 'Error: Email is required';
 
     // Validate value type
-    if (typeof email !== 'string') return console.log('Error: Invalid data type');
+    if (typeof email !== 'string') return 'Error: Invalid data type';
 
     // Convert data type to string
     email = email.toString();
@@ -13,16 +13,9 @@ const checkEmail = (email) => {
 
     // Test if email is valid or not
     let result = regEx.test(email);
-    if (result) return console.log('VALID');
-    else return console.log('INVALID');
+    if (result) return 'VALID';
+    else return 'INVALID';
 
 };
 
-// Testing
-console.log('\n\n// Function 03');
-checkEmail('apranata@binar.co.id');
-checkEmail('apranata@binar.com');
-checkEmail('apranata@binar');
-checkEmail('apranata');
-checkEmail(3322);
-checkEmail(1);
+module.exports = checkEmail;
